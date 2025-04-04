@@ -1,5 +1,4 @@
 /venv/
-/route/
 
 # Distribution / packaging
 .Python
@@ -62,8 +61,8 @@ sdist/
 var/
 *.egg-info/
 .installed.cfg
-local.py/
-*.egg
+local.py
+
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
