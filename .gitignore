@@ -62,7 +62,7 @@ sdist/
 var/
 *.egg-info/
 .installed.cfg
-Route/settings/local.py
+/local.py
 *.egg
 
 # PyInstaller
