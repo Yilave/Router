@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+
+{% block title %} Home {% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="card">
+       
+            <form method="POST">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-12 col-lg-6 mb-2">
+                        <input type="text" class="form-control" id="email" placeholder="Enter Location" name="origin">
+                    </div>
+                    <div class="col-md-12 col-lg-6 mb-2">
+                        <input type="text" class="form-control" placeholder="Enter Destination" name="dest">
+                    </div>
+                
+                </div>
+                <button type="submit" class="btn btn-block btn-primary">Get Route</button>
+            </form>
+       
+        
+    </div>
+</div>
+
+
+<div class="container mt-3">
+        {% if map %}
+        <div style="width:100%;" class="mb-5">
+            <div style="margin: auto;">
+                {{map|safe}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="card col-sm-12 col-md-8 col-lg-6">
+                <div class="card-body">
+                    <p><span><b>{{origin}}</b></span> - <span><b>{{destination}}</b></span></p>
+                    <p><span><b>Distance:</b> </span> <span>{{distance}}</span></p>
+                    <p><span><b>Gallons:</b> </span> {{gallons}}. (10 miles per gallon)</p>
+                    <p><span><b>Average Fuel Price:</b> </span> <span>{{average_price}}</span></p>
+                    <p><span><b>Total Cost:</b> </span> <span>{{total_cost}}</span></p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+</div>
+
+
+{% endblock %}
